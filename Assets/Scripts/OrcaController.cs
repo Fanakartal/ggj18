@@ -61,18 +61,56 @@ public class OrcaController : MonoBehaviour
             }
 
             // Right -> Back, Front
-            if(Input.GetAxis("Horizontal") > 0 && facingDirection == FacingDirection.Right)
+            if (facingDirection == FacingDirection.Right && Input.GetAxis("Horizontal") > 0 && canTurn)
             {
+                canTurn = false;
                 StartCoroutine(TurnRight());
                 
             }
-            else if (Input.GetAxis("Horizontal") < 0 && facingDirection == FacingDirection.Right)
+            else if (facingDirection == FacingDirection.Right && Input.GetAxis("Horizontal") < 0 && canTurn)
             {
+                canTurn = false;
+                StartCoroutine(TurnLeft());
+            }
+
+            if (facingDirection == FacingDirection.Back && Input.GetAxis("Horizontal") > 0 && canTurn)
+            {
+                canTurn = false;
+                StartCoroutine(TurnRight());
+
+            }
+            else if (facingDirection == FacingDirection.Back && Input.GetAxis("Horizontal") < 0 && canTurn)
+            {
+                canTurn = false;
+                StartCoroutine(TurnLeft());
+            }
+
+            if (facingDirection == FacingDirection.Left && Input.GetAxis("Horizontal") > 0 && canTurn)
+            {
+                canTurn = false;
+                StartCoroutine(TurnRight());
+
+            }
+            else if (facingDirection == FacingDirection.Left && Input.GetAxis("Horizontal") < 0 && canTurn)
+            {
+                canTurn = false;
+                StartCoroutine(TurnLeft());
+            }
+
+            if (facingDirection == FacingDirection.Front && Input.GetAxis("Horizontal") > 0 && canTurn)
+            {
+                canTurn = false;
+                StartCoroutine(TurnRight());
+
+            }
+            else if (facingDirection == FacingDirection.Front && Input.GetAxis("Horizontal") < 0 && canTurn)
+            {
+                canTurn = false;
                 StartCoroutine(TurnLeft());
             }
 
             // Back -> Right, Left
-            else if (Input.GetAxis("Horizontal") > 0 && facingDirection == FacingDirection.Back)
+            /*else if (Input.GetAxis("Horizontal") > 0 && facingDirection == FacingDirection.Back)
             {
                 StartCoroutine(TurnRight());
 
@@ -80,7 +118,7 @@ public class OrcaController : MonoBehaviour
             else if (Input.GetAxis("Horizontal") < 0 && facingDirection == FacingDirection.Back)
             {
                 StartCoroutine(TurnLeft());
-            }
+            }*/
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -131,10 +169,28 @@ public class OrcaController : MonoBehaviour
 
         transform.Rotate(new Vector3(0.0f, -90.0f, 0.0f));
 
-        this.gameObject.GetComponent<Rigidbody>().velocity
-            = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, moveSpeed);
+        if (facingDirection == FacingDirection.Back)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, moveSpeed);
+        }
+        else if (facingDirection == FacingDirection.Left)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(-moveSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, 0);
+        }
+        else if (facingDirection == FacingDirection.Front)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, -moveSpeed);
+        }
+        else if (facingDirection == FacingDirection.Right)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(moveSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, 0.0f);
+        }
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(1.0f);
         //Waiter();
 
         canTurn = true;
@@ -146,10 +202,38 @@ public class OrcaController : MonoBehaviour
         
         transform.Rotate(new Vector3(0.0f, 90.0f, 0.0f));
 
-        this.gameObject.GetComponent<Rigidbody>().velocity
-            = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, -moveSpeed);
+        if (facingDirection == FacingDirection.Front)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, -moveSpeed);
+        }
+        else if (facingDirection == FacingDirection.Left)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(-moveSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, 0);
+        }
+        else if (facingDirection == FacingDirection.Back)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, moveSpeed);
+        }
+        else if (facingDirection == FacingDirection.Right)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(moveSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, 0);
+        }
+        else if (facingDirection == FacingDirection.Front)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(0.0f, gameObject.GetComponent<Rigidbody>().velocity.y, -moveSpeed);
+        }
+        else if (facingDirection == FacingDirection.Right)
+        {
+            this.gameObject.GetComponent<Rigidbody>().velocity
+                = new Vector3(moveSpeed, gameObject.GetComponent<Rigidbody>().velocity.y, 0.0f);
+        }
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(1.0f);
         //Waiter();
 
         canTurn = true;

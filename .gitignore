@@ -1,6 +1,6 @@
 [Ll]ibrary/
 [Tt]emp/
-Obj/
+obj/
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
@@ -33,3 +33,6 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# Include
+!*.obj

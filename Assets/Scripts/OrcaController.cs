@@ -59,9 +59,6 @@ public class OrcaController : MonoBehaviour
             {
                 MoveDown();
             }
-
-<<<<<<< HEAD
-=======
             // Right -> Back, Front
             if (facingDirection == FacingDirection.Right && Input.GetAxis("Horizontal") > 0 && canTurn)
             {
@@ -127,7 +124,6 @@ public class OrcaController : MonoBehaviour
                 FireSonar();
             }
         }
->>>>>>> cce48927a9405b5f9968800bff2e4cf6011dd299
         //transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.1f);
 
         //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);

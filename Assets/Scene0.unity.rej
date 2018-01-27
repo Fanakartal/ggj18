@@ -1,0 +1,50 @@
+diff a/Assets/Scene0.unity b/Assets/Scene0.unity	(rejected hunks)
+@@ -1024,12 +1024,47 @@
+       objectReference: {fileID: 0}
+     - target: {fileID: 4690344812867414, guid: 03a2d924ba2c9c34caa5fe72d5991d11, type: 2}
+       propertyPath: m_RootOrder
+-      value: 1
++      value: 0
++      objectReference: {fileID: 0}
++<<<<<<< HEAD
++    - target: {fileID: 4690344812867414, guid: 03a2d924ba2c9c34caa5fe72d5991d11, type: 2}
++      propertyPath: m_LocalEulerAnglesHint.x
++      value: 0
+       objectReference: {fileID: 0}
++<<<<<<< HEAD
+     - target: {fileID: 1534323917766960, guid: 03a2d924ba2c9c34caa5fe72d5991d11, type: 2}
+       propertyPath: m_IsActive
+       value: 1
+       objectReference: {fileID: 0}
++=======
++    - target: {fileID: 114511011408695592, guid: 03a2d924ba2c9c34caa5fe72d5991d11,
++        type: 2}
++      propertyPath: jumpSpeed
++      value: 50
++      objectReference: {fileID: 0}
++    - target: {fileID: 114511011408695592, guid: 03a2d924ba2c9c34caa5fe72d5991d11,
++        type: 2}
++      propertyPath: moveSpeed
++      value: 25
++      objectReference: {fileID: 0}
++    - target: {fileID: 114511011408695592, guid: 03a2d924ba2c9c34caa5fe72d5991d11,
++        type: 2}
++      propertyPath: up
++      value: 
++      objectReference: {fileID: 391439884}
++    - target: {fileID: 114511011408695592, guid: 03a2d924ba2c9c34caa5fe72d5991d11,
++        type: 2}
++      propertyPath: down
++      value: 
++      objectReference: {fileID: 1024048257}
++    - target: {fileID: 114511011408695592, guid: 03a2d924ba2c9c34caa5fe72d5991d11,
++        type: 2}
++      propertyPath: m_Enabled
++      value: 0
++      objectReference: {fileID: 0}
++=======
++>>>>>>> cce48927a9405b5f9968800bff2e4cf6011dd299
++>>>>>>> 1376dfd3ac7a2ef631ef96fe1592ee1098d9c74b
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 03a2d924ba2c9c34caa5fe72d5991d11, type: 2}
+   m_IsPrefabParent: 0

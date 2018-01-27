@@ -7,6 +7,9 @@ public class OrcaController : MonoBehaviour
     public float jumpSpeed = 50f;
     public float moveSpeed = 10f;
 
+    private bool isFacingUp;
+    private bool isFacingDown;
+
     private Transform from;
     public Transform up;
     public Transform down;
@@ -29,11 +32,13 @@ public class OrcaController : MonoBehaviour
         _newPosition.y += 2 * Mathf.Sin(Time.time) * Time.deltaTime;
         transform.position = _newPosition;
 
+        transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.1f);
+
         //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
         
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
-            transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.01f);
+            transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.1f);
             //transform.Rotate(45.0f, transform.rotation.y, transform.rotation.z);
             
             //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);// new Vector3(transform.forward * moveSpeed, jumpSpeed, 0.0f));

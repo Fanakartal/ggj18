@@ -32,7 +32,7 @@ public class OrcaController : MonoBehaviour
         _newPosition.y += 2 * Mathf.Sin(Time.time) * Time.deltaTime;
         transform.position = _newPosition;
 
-        transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.1f);
+        //transform.rotation = Quaternion.Lerp(from.rotation, up.rotation, Time.time * 0.1f);
 
         //gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed, ForceMode.Acceleration);
         

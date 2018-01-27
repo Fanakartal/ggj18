@@ -36,3 +36,4 @@ sysinfo.txt
 
 # Include
 !*.obj
+Assets/Materials.meta

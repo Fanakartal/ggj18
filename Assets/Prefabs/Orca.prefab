@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 54579746892576926}
   - component: {fileID: 114511011408695592}
   - component: {fileID: 143238345450522966}
+  - component: {fileID: 114442091791211518}
   m_Layer: 0
   m_Name: Orca
   m_TagString: Untagged
@@ -187,6 +188,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114442091791211518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1534323917766960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bc56f8e53cc7844b13f9df9e54811f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jellyFish: {fileID: 1710496119249590, guid: a15cb9d263778aa4294f64401ac54e1d, type: 2}
 --- !u!114 &114511011408695592
 MonoBehaviour:
   m_ObjectHideFlags: 1

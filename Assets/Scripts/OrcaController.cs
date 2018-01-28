@@ -7,6 +7,9 @@ public class OrcaController : MonoBehaviour
     public float jumpSpeed = 50f;
     public float moveSpeed = 10f;
 
+    public float yBoundry;
+    public float negYBoundry;
+
     private bool isFacingUp;
     private bool isFacingDown;
 
@@ -246,11 +249,18 @@ public class OrcaController : MonoBehaviour
     private void MoveDown()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z);
+
+        if (transform.position.y < negYBoundry)
+            transform.position = new Vector3(transform.position.x, negYBoundry, transform.position.z);
     }
 
     private void MoveUp()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
+
+
+        if (transform.position.y > yBoundry)
+            transform.position = new Vector3(transform.position.x, yBoundry, transform.position.z);
     }
 
     private void SinusMovement()

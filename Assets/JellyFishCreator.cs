@@ -23,9 +23,9 @@ public class JellyFishCreator : MonoBehaviour {
     {
         if (Mathf.Approximately(this.gameObject.transform.forward.x, -1.0f)
             || Mathf.Approximately(this.gameObject.transform.forward.z, -1.0f))
-            return Random.Range(posFloat, posFloat - 100.0f);
+            return Random.Range(posFloat, posFloat - 50.0f);
         else
-            return Random.Range(posFloat, posFloat + 100.0f);
+            return Random.Range(posFloat, posFloat + 50.0f);
     }
 
     private void CreateJellyFish()
@@ -37,7 +37,7 @@ public class JellyFishCreator : MonoBehaviour {
 
         if (Mathf.Approximately(this.gameObject.transform.forward.x, 1.0f))
         {
-            Instantiate(jellyFish, new Vector3(RandomPos(this.gameObject.transform.position.x + 100.0f), this.gameObject.transform.position.y,
+            Instantiate(jellyFish, new Vector3(RandomPos(this.gameObject.transform.position.x + 50.0f), this.gameObject.transform.position.y,
                 this.gameObject.transform.position.z), Quaternion.identity);
 
             //Debug.Log("Forward.x is: " + this.gameObject.transform.forward);
@@ -46,7 +46,7 @@ public class JellyFishCreator : MonoBehaviour {
         if (Mathf.Approximately(this.gameObject.transform.forward.z, 1.0f))
         {
             Instantiate(jellyFish, new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y,
-                RandomPos(this.gameObject.transform.position.z + 100.0f)), Quaternion.identity);
+                RandomPos(this.gameObject.transform.position.z + 50.0f)), Quaternion.identity);
 
             //Debug.Log("Forward.x is: " + this.gameObject.transform.forward);
         }
